@@ -1,10 +1,12 @@
 let TerraformBlock = ./../lib/terraform/terraform_block.dhall
 
-let Backends = (./../lib/backends/package.dhall).BackendNames
+let BackendPackage = ./../lib/backends/package.dhall
 
-let mkBackendResource = ./../lib/backends/mkBackendResource.dhall
+let Backends = BackendPackage.BackendNames
 
-let LocalBackend = ./../lib/backends/local.dhall
+let mkBackendResource = BackendPackage.mkBackendResource
+
+let LocalBackend = ./../lib/backends/types/local.dhall
 
 let ProviderResource = ./../lib/providers/ProviderResource.dhall
 
@@ -16,7 +18,7 @@ let sampleProviders
     : List ProviderResource
     = [ mkProvider
           "aws"
-          Providers::{ source = "hashicorp/aws", version = Some "~> 3.0.0" }
+          Providers::{ source = "hashicorp/aws", version = Some ">= 3.0.0" }
       ]
 
 let localBackend = Backends.local LocalBackend.default

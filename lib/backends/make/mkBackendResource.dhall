@@ -1,10 +1,10 @@
-let BackendResource = ./BackendResource.dhall
+let BackendResource = ../types/BackendResource.dhall
 
-let Backends = (./package.dhall).BackendNames
+let Backends = ../typeUnions/backend_names.dhall
 
-let LocalBackend = ./local.dhall
+let LocalBackend = ../types/local.dhall
 
-let RemoteBackend = (./remote.dhall).RemoteBackend
+let RemoteBackend = (../types/remote.dhall).RemoteBackend
 
 let mkBackendResource
     : forall (body : Backends) -> BackendResource

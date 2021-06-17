@@ -1,4 +1,4 @@
-let BackendResource = ./../backends/BackendResource.dhall
+let BackendResource = ./../backends/types/BackendResource.dhall
 
 let ProviderResource = ./../providers/ProviderResource.dhall
 
