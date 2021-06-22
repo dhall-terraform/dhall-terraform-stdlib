@@ -1,6 +1,6 @@
-let BackendResource = ./../backends/types/BackendResource.dhall
+let BackendResource = ../backends/types/BackendResource.dhall
 
-let ProviderResource = ./../providers/ProviderResource.dhall
+let ProviderResource = ../providers/ProviderResource.dhall
 
 in  { Type =
         { required_version : Optional Text
