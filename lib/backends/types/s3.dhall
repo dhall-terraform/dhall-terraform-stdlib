@@ -36,28 +36,28 @@ let S3Backend =
       , max_retries: Optional Integer
       } 
   , default =
-      { region: env:AWS_REGION ? env:AWS_DEFAULT_REGION
-      , dynamodb_endpoint: Some env:AWS_DYNAMODB_ENDPOINT ? None
-      , endpoint: Some env:AWS_S3_ENDPOINT ? None
-      , iam_endpoint: Some env:AWS_IAM_ENDPOINT ? None
-      , sts_endpoint: Some env:AWS_STS_ENDPOINT ? None
+      { region: env:AWS_REGION as Text ? env:AWS_DEFAULT_REGION as Text ? None Text
+      , dynamodb_endpoint: Some env:AWS_DYNAMODB_ENDPOINT as Text ? None Text
+      , endpoint: Some env:AWS_S3_ENDPOINT as Text ? None Text
+      , iam_endpoint: Some env:AWS_IAM_ENDPOINT as Text ? None Text
+      , sts_endpoint: Some env:AWS_STS_ENDPOINT as Text ? None Text
       , encrypt: Some False
-      , acl: None
-      , access_key: None
-      , secret_key: None
-      , kms_key_id: None
-      , dynamodb_table: None
-      , profile: None
-      , shared_credentials_file: None
-      , token: None
+      , acl: None Text
+      , access_key: None Text
+      , secret_key: None Text
+      , kms_key_id: None Text
+      , dynamodb_table: None Text
+      , profile: None Text
+      , shared_credentials_file: None Text
+      , token: None Text
       , skip_credentials_validation: Some False
       , skip_region_validation: Some False
       , skip_metadata_api_check: Some False
-      , sse_customer_key: Some env:AWS_SSE_CUSTOMER_KEY ? None
-      , role_arn: None
-      , session_name: None
-      , external_id: None
-      , assume_role_policy: None
+      , sse_customer_key: Some env:AWS_SSE_CUSTOMER_KEY as Text ? None Text
+      , role_arn: None Text
+      , session_name: None Text
+      , external_id: None Text
+      , assume_role_policy: None Text
       , workspace_key_prefix: Some "env:"
       , force_path_style: Some False
       , max_retries: Some 5

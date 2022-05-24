@@ -16,6 +16,9 @@ let mkBackendResource
           , remote =
               \(x : RemoteBackend.Type) ->
                 [ { mapKey = "remote", mapValue = Backends.remote x } ]
+          , s3 = 
+              \(x: RemoteBackend.Type) ->
+                [ { mapKey = "s3", mapValue = Backends.s3 x}]
           }
           body
 
