@@ -1,6 +1,6 @@
 let BackendNames = ../typeUnions/backend_names.dhall
 
-let Map = https://prelude.dhall-lang.org/v20.2.0/Map/Type
+let Map = https://prelude.dhall-lang.org/v21.1.0/Map/Type
 
 let Backends
     : Type

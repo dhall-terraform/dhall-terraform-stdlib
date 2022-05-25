@@ -6,6 +6,8 @@ let LocalBackend = ../types/local.dhall
 
 let RemoteBackend = (../types/remote.dhall).RemoteBackend
 
+let S3Backend = ../types/s3.dhall
+
 let mkBackendResource
     : forall (body : Backends) -> BackendResource
     = \(body : Backends) ->
@@ -16,9 +18,9 @@ let mkBackendResource
           , remote =
               \(x : RemoteBackend.Type) ->
                 [ { mapKey = "remote", mapValue = Backends.remote x } ]
-          , s3 = 
-              \(x: RemoteBackend.Type) ->
-                [ { mapKey = "s3", mapValue = Backends.s3 x}]
+          , s3 =
+              \(x : S3Backend.Type) ->
+                [ { mapKey = "s3", mapValue = Backends.s3 x } ]
           }
           body
 
